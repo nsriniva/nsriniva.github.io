@@ -43,8 +43,7 @@ The **datachannel**(type of article) and **weekday**(day of the week on which th
 data_channel_columns = list(filter(lambda x: x.startswith('data_channel_is_'), onp_df.columns))
 weekday_columns = list(filter(lambda x: x.startswith('weekday_is_'), onp_df.columns))
 ```
-
-{: .box-note}
+~~~
 ['data_channel_is_lifestyle', 
  'data_channel_is_entertainment',
  'data_channel_is_bus',
@@ -52,7 +51,6 @@ weekday_columns = list(filter(lambda x: x.startswith('weekday_is_'), onp_df.colu
  'data_channel_is_tech',
  'data_channel_is_world']
 
-{: .box-note} 
 ['weekday_is_monday',
  'weekday_is_tuesday',
  'weekday_is_wednesday',
@@ -60,7 +58,8 @@ weekday_columns = list(filter(lambda x: x.startswith('weekday_is_'), onp_df.colu
  'weekday_is_friday',
  'weekday_is_saturday',
  'weekday_is_sunday']
- 
+~~~
+
 ### Processing the data
 Merging the data from the multiple **data_channel_is_\***/**weekday_is_\*** columns into a single **data_channel**/**weekday** was easily achieved.
 However examining the resultant columns revealed a problem.
@@ -68,19 +67,15 @@ However examining the resultant columns revealed a problem.
 display(onp_merged_df.data_channel.value_counts())
 display(onp_merged_df.weekday.value_counts())
 ```
-
-{: .box-note} 
-6  8427
-5  7346
-2  7057
-3  6258
-0  6134
-4  2323
-1  2099
-Name: data_channel, dtype: int64
-
 ~~~
-
+6    8427
+5    7346
+2    7057
+3    6258
+0    6134
+4    2323
+1    2099
+Name: data_channel, dtype: int64
 3    7435
 2    7390
 4    7267
@@ -89,7 +84,6 @@ Name: data_channel, dtype: int64
 7    2737
 6    2453
 Name: weekday, dtype: int64
-
 ~~~
 
 ### Missing data - BeautifulSoup to the rescue
