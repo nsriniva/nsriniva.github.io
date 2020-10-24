@@ -79,7 +79,8 @@ display(onp_merged_df.weekday.value_counts())
 1  | 2099
 Name: data_channel, dtype: int64
 
-{: .box-note} 
+---
+
 3    7435
 2    7390
 4    7267
@@ -88,6 +89,8 @@ Name: data_channel, dtype: int64
 7    2737
 6    2453
 Name: weekday, dtype: int64
+
+---
 
 ### Missing data - BeautifulSoup to the rescue
 
