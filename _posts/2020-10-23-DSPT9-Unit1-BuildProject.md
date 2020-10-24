@@ -126,8 +126,9 @@ def get_data_channel(url):
     return ret
 
 ```
+The **url** and **data_channel** columns were written out to [data_channel_df.csv](https://raw.githubusercontent.com/nsriniva/DS-Unit-1-Build/master/data_channel_df.csv), processed using [data_channel_cleanup.py](https://raw.githubusercontent.com/nsriniva/DS-Unit-1-Build/master/data_channel_cleanup.py) and the new **data_channel** info was written out to [data_channel_cleaned_df.csv](https://raw.githubusercontent.com/nsriniva/DS-Unit-1-Build/master/data_channel_cleaned_df.csv)
 
-After cleaning up the **data_channel** information, the **data_channel** column data was examined.
+The new **data_channel** info was merged into the **onp_merged_df** dataframe and the **data_channel** column data was examined.
 
 ```python
 display(onp_merged_df.data_channel.value_counts())
