@@ -167,9 +167,18 @@ At this stage, the data has been sufficiently cleaned and is ready for the next 
 
 ## Data Analysis
 
-### Partitioning the dataset and Popularity
+The initial focus of the analysis was to examine the effect of removing outliers on the accuracy of Linear Regression models, where accuracy is measured by computing the Mean Absolute Error(MAE).
 
-### Linear Regression
+Once that was done, the focus of the analysis was to partition the dataset into low, medium and high popularity articles and examine, for each partition, the
+
+1.correlation matrices for differences/similarities
+2.relationship between the type of article and popularity
+3.relationship between the day of the week the article was published and popularity
+
+### Linear Regression and removing outliers
+
+![Linear Regression]
+### Partitioning the dataset and Popularity
 
 ### Correlation Matrix
 
