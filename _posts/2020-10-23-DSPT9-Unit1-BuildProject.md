@@ -85,6 +85,93 @@ Name: data_channel, dtype: int64
 6    2453
 Name: weekday, dtype: int64
 ~~~
+The **data_channel** attribute values have the following mappings
+~~~
+OrderedDict([('misc', 0),
+             ('lifestyle', 1),
+             ('entertainment', 2),
+             ('bus', 3),
+             ('socmed', 4),
+             ('tech', 5),
+             ('world', 6)])
+~~~
+While the **weekday** column has good data for every row, it looks like 6134 entries do not have valid **data_channel** information. That's a lot of missing information so something that needed to be rectified, if possible.
 
 ### Missing data - BeautifulSoup to the rescue
 
+Manually inspected a few of the urls with missing **data_channel** information and found that the data channel information was encoded in the **data-channel** attribute of the **hgroup** element.
+
+```html
+<hgroup class="channel page-header post-head" data-channel="entertainment" data-section="sec0=entertainment&amp;sec1=index&amp;sec2=">
+<h2>Entertainment</h2>
+...
+...
+...
+</hgroup>
+```
+Once the information was located, it was a simple matter of using the requests and BeautifulSoup packages to extract it for all the entries that had missing **data_channel** information.
+
+```python
+def get_data_channel(url):
+    global dcm_vals_next
+    hgroup = BeautifulSoup(requests.get(url).content,'html.parser').find('hgroup')
+    ret = 0
+    if hgroup is not None:
+        dc = hgroup['data-channel']
+        if dc not in dcm_keys:
+            dcm[dc] = dcm_vals_next
+            dcm_keys.append(dc)
+            dcm_vals_next += 1
+        ret = dcm[dc]
+    return ret
+
+```
+
+After cleaning up the **data_channel** information, the **data_channel** column data was examined.
+
+```python
+display(onp_merged_df.data_channel.value_counts())
+```
+~~~
+6    9513
+2    8384
+5    8219
+3    6980
+4    2323
+1    2099
+7    1917
+8     138
+9      46
+0      25
+Name: data_channel, dtype: int64
+~~~
+
+Three new **data_channel** types have been added resulting in a new mapping
+~~~
+OrderedDict([('misc', 0),
+             ('lifestyle', 1),
+             ('entertainment', 2),
+             ('bus', 3),
+             ('socmed', 4),
+             ('tech', 5),
+             ('world', 6),
+             ('culture', 7),
+             ('u.s.', 8),
+             ('social-good', 9)])
+~~~
+
+Unfortunately, we're still left with a few(25) entries with no **data_channel** information.
+
+At this stage, the data has been sufficiently cleaned and is ready for the next step.
+
+## Data Analysis
+
+### Partitioning the dataset and Popularity
+
+### Linear Regression
+
+### Correlation Matrix
+
+### Data Channel Type/Popularity
+
+### Weekday/Popularity
