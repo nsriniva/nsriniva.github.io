@@ -171,9 +171,11 @@ The initial focus of the analysis was to examine the effect of removing outliers
 
 Once that was done, the focus of the analysis was to partition the dataset into low, medium and high popularity articles and examine, for each partition, the
 
-1.correlation matrices for differences/similarities
-2.relationship between the type of article and popularity
-3.relationship between the day of the week the article was published and popularity
+1. correlation matrices for differences/similarities
+
+2. relationship between the type of article and popularity
+
+3. relationship between the day of the week the article was published and popularity
 
 ### Linear Regression and removing outliers
 
