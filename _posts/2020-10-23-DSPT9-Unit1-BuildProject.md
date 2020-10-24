@@ -45,13 +45,14 @@ weekday_columns = list(filter(lambda x: x.startswith('weekday_is_'), onp_df.colu
 ```
 
 {: .box-note}
-['data_channel_is_lifestyle', 'data_channel_is_entertainment',
+['data_channel_is_lifestyle', 
+ 'data_channel_is_entertainment',
  'data_channel_is_bus',
  'data_channel_is_socmed',
  'data_channel_is_tech',
  'data_channel_is_world']
- 
- 
+
+{: .box-note} 
 ['weekday_is_monday',
  'weekday_is_tuesday',
  'weekday_is_wednesday',
