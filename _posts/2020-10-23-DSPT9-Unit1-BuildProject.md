@@ -179,17 +179,17 @@ Once that was done, the focus of the analysis was to partition the dataset into 
 
 ### Linear Regression and removing outliers
 
-![Linear Regression](https://raw.githubusercontent.com/nsriniva/DS-Unit-1-Build/master/LinearRegression.png)
+![Linear Regression](/assets/img/LinearRegression.png)
 
 ### Partitioning the dataset and Popularity
 
 ### Correlation Matrix
 
-![Correlation](https://raw.githubusercontent.com/nsriniva/DS-Unit-1-Build/master/Correlation.png)
+![Correlation](/assets/img/Correlation.png)
 
 ### Data Channel Type/Popularity
 
-![DataChannel](https://raw.githubusercontent.com/nsriniva/DS-Unit-1-Build/master/DataChannel.png)
+![DataChannel](/assets/img//DataChannel.png)
 
 ### Weekday/Popularity
 
