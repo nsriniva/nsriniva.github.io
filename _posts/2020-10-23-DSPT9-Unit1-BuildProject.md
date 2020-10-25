@@ -287,3 +287,8 @@ Comparitive Summary:
 For this analysis, bar graphs of the percentage of articles per data channel were plotted.
 
 ![Weekday](/assets/img/Weekday.png)
+
+Comparitive Summary:
+1. Most articles in all 3 datasets were published during the work week.
+2. For both the medium and high popularity datasets, the number of articles on Tue/Wed/Thu were practically the same with a significant drop on Fri.
+3. The weekends were better for both the medium and high popularity datasets, as compared to the low popularity i.e. an article published on the weekend(especially Sunday) has a better chance of achieving medium or high popularity. 
