@@ -271,8 +271,19 @@ A quick and dirty comparitive summary:
 
 ### Data Channel Type/Popularity
 
+For this analysis, bar graphs of the percentage of articles per data channel were plotted.
+
 ![DataChannel](/assets/img//DataChannel.png)
 
+Comparitive Summary:
+1. The top 4 channels in each of the low, medium and high popularity datasets are **world, tech, entertainment and business**
+
+2. A clear winner in the medium popularity dataset are **tech** articles, with **world** and **bus** practically neck and neck for second place with **entertainment** trailing behind.
+
+3. In the high popularity dataset, **entertainment** articles are a clear winner, with **tech** a little behind for second, **world** not far behind at third and **bus** a clear laggard.
+
 ### Weekday/Popularity
+
+For this analysis, bar graphs of the percentage of articles per data channel were plotted.
 
 ![Weekday](/assets/img/Weekday.png)
