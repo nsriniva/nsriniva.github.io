@@ -5,7 +5,7 @@ subtitle: The What and When of Article Popularity
 tags: [datasets, visualization]
 ---
 
-This is a post about my DS-Unit1 Build project which is based on the dataset from the [Online News Popularity project](https://archive.ics.uci.edu/ml/datasets/online+news+popularity) that collected data from articles on Mashable, published between January 7 2013 to January 7 2015.
+This is a post about my project  on the dataset from the [Online News Popularity project](https://archive.ics.uci.edu/ml/datasets/online+news+popularity) that collected data from articles on Mashable, published between January 7 2013 to January 7 2015.
 
 The data was the basis for research which resulted in the publication of a paper on ["A Proactive Intelligent Decision Support System for Predicting the Popularity of Online News"](https://www.researchgate.net/publication/283510525_A_Proactive_Intelligent_Decision_Support_System_for_Predicting_the_Popularity_of_Online_News)
 
