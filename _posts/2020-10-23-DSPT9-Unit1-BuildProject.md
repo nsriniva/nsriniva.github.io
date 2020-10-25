@@ -222,6 +222,16 @@ This was performed against the full dataset as well as multiple partitioning sce
 ![Linear Regression](/assets/img/LinearRegression.png)
 
 ### Partitioning the dataset and Popularity
+For the rest of the analysis, a <img src="https://render.githubusercontent.com/render/math?math={0.5 \sigma}"> partitioning was chosen because that was the highest <img src="https://render.githubusercontent.com/render/math?math={\sigma}"> value where the median(1400) and high(9200) values were both the same order of magnitude.
+```python
+pop_df, hpop_df = partition_on_shares(onp_merged_df, 0.5)
+
+pop_df_grouped = pop_df.groupby(pop_df.popular)
+
+lpop_df = pop_df_grouped.get_group(0)
+mpop_df = pop_df_grouped.get_group(1)
+```
+The entries with **shares** values exceeding <img src="https://render.githubusercontent.com/render/math?math={0.5 \sigma}"> were extracted into the **hpop_df**, with the remaining entries were split into **lpop_df** and **mpop_df** datasets based on whether their **shares** values were < or >= 1400(the median value), respectively.
 
 ### Correlation Matrix
 
