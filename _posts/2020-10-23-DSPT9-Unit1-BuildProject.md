@@ -189,6 +189,36 @@ def get_outliers_filter(sigma=3):
 
 ### Linear Regression and removing outliers
 
+The **LinearRegression()** tool from the **sklearn.linear_model** package was used to generate linear regression models whose accuracy was measured by computing the MAE(Mean Absolute Error). 
+
+```python
+#Let's try some linear regression
+def linear_regression(df, outliers= None):
+  if outliers is None:
+    X = df.values 
+    Y = onp_df.shares.values.reshape(-1,1)
+  else:
+    X = df.drop(outliers).reindex().values
+    Y = onp_df.drop(outliers).reindex().shares.values.reshape(-1,1)
+
+  lr = LinearRegression()
+  lr.fit(X,Y)
+  Yc = lr.predict(X)
+
+  error = Y-Yc
+
+  num = len(Y)
+
+  # Mean absolute error
+  mae = np.abs(error).sum()/num
+  # Mean square error
+  mse = np.linalg.norm(error)/num**0.5
+  
+  return num, mae, mse, len(X), Y, Yc
+```
+
+This was performed against the full dataset as well as multiple partitioning scenarios, with the best accuracy(lowest MAE) achieved with a <img src="https://render.githubusercontent.com/render/math?math={0.25 \sigma}"> paritioning where both the lower and upper outliers were removed.
+
 ![Linear Regression](/assets/img/LinearRegression.png)
 
 ### Partitioning the dataset and Popularity
