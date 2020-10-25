@@ -177,6 +177,16 @@ Once that was done, the focus of the analysis was to partition the dataset into 
 
 3. relationship between the day of the week the article was published and popularity
 
+### Partitioning
+
+The **zscore()** method from the **scipy.stats** package was used to compute **z scores** for the **shares** values. These **z scores** were compared against the specified <img src="https://render.githubusercontent.com/render/math?math={\sigma}"> value to generate a boolean filter array that could be used to paritition the dataset.
+
+```python
+def get_outliers_filter(sigma=3):
+  z = np.abs(stats.zscore(onp_df.shares))
+  return np.where(z>sigma)[0]
+```
+
 ### Linear Regression and removing outliers
 
 ![Linear Regression](/assets/img/LinearRegression.png)
