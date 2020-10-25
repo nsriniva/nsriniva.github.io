@@ -231,9 +231,34 @@ pop_df_grouped = pop_df.groupby(pop_df.popular)
 lpop_df = pop_df_grouped.get_group(0)
 mpop_df = pop_df_grouped.get_group(1)
 ```
-The entries with **shares** values exceeding <img src="https://render.githubusercontent.com/render/math?math={0.5 \sigma}"> were extracted into the **hpop_df**, with the remaining entries were split into **lpop_df** and **mpop_df** datasets based on whether their **shares** values were < or >= 1400(the median value), respectively.
+The entries with **shares** values exceeding <img src="https://render.githubusercontent.com/render/math?math={0.5 \sigma}"> were extracted into the **hpop_df**(high popularity dataframe), with the remaining entries were split into **lpop_df**(low popularity dataframe) and **mpop_df**(medium popularity dataframe) datasets based on whether their **shares** values were < or >= 1400(the median value), respectively.
 
 ### Correlation Matrix
+
+The **seaborn.heatmap** was used to display the pairwise correlation of columns computed using the **pandas.DataFrame.corr()** method against the low, medium and high popularity dataframes.
+
+```python
+def display_corr(df, ax,sfx='Low'):
+## heatmeap to see the correlation between features. 
+# Generate a mask for the upper triangle (taken from seaborn example gallery)
+  df_corr = df.corr()
+
+  mask = np.zeros_like(df_corr, dtype=np.bool)
+  mask[np.triu_indices_from(mask)] = True
+
+  sns.heatmap(df_corr, 
+              annot=False,
+              mask = mask,
+              cmap = 'RdBu_r',
+              linewidths=0.1, 
+              linecolor='white',
+              vmax = .9,
+              ax = ax,
+              square=True)
+  
+  ax.text(1, 1,f'min({df.shares.min()}) max({df.shares.max()}) num({len(df.shares)})', fontsize='x-large')
+  ax.set_title(f'Correlations Among Features in the {sfx} Popularity Range', y = 1.03,fontsize = 20);
+```
 
 ![Correlation](/assets/img/Correlation.png)
 
