@@ -5,9 +5,11 @@ subtitle: The What and When of Article Popularity
 tags: [datasets, visualization]
 ---
 
-This is a post about my project  on the dataset from the [Online News Popularity project](https://archive.ics.uci.edu/ml/datasets/online+news+popularity) that collected data from articles on Mashable, published between January 7 2013 to January 7 2015.
+This is a post about my project  on the dataset from the [Online News Popularity project](https://archive.ics.uci.edu/ml/datasets/online+news+popularity) that collected data from articles published on Mashable, between January 7 2013 to January 7 2015.
 
 The data was the basis for research which resulted in the publication of a paper on ["A Proactive Intelligent Decision Support System for Predicting the Popularity of Online News"](https://www.researchgate.net/publication/283510525_A_Proactive_Intelligent_Decision_Support_System_for_Predicting_the_Popularity_of_Online_News)
+
+A part of this work has also been written up as an article on Medium - [Studying Online News Popularity](https://srini-nariangadu.medium.com/studying-online-news-popularity-8bbf2fb3f89b).
 
 ## The Dataset
 The dataset is contained in a **csv** file that was packaged into a **zip** file along with the associated **names** file describing the dataset. If the csv file were the only file in the zip package, Pandas' **read_csv** method could be used to extract the data set. 
@@ -261,14 +263,17 @@ def display_corr(df, ax,sfx='Low'):
 ```
 
 The  correlation maps for the low/med/high popularity dataframes show distinctively different "signatures", with surprising similarities between the low and high popularity datasets.
-A quick and dirty comparitive summary:
-1. All 3 datasets appear to be very similair "along the diagonal"
-2. The **data_channel** vs **LDA_00, LDA_01, LDA_02** correlations are the strongest in the low popularity , reducing in the medium and reducing again in the high popularity dataset.
-3. The **average_token_length** vs **global_subjectivity, global_rate_positive_words, rate_positive_words, avg_positive_polarity, max_positive_polarity, average_negative_polarity, min_negative_polarity** correlations are weakest in the low popularity , increasing in the medium and increasing again in the high popularity dataset.
-4. The **n_unique_tokens, n_non_stop_words, n_non_stop_unique_tokens** vs **global_subjectivity, global_rate_positive_words, rate_positive_words, avg_positive_polarity, max_positive_polarity, average_negative_polarity, min_negative_polarity** correlations  essentially only exist in the low and high popularity datasets but much stronger in the high popularity dataset.
 
 ![Correlation](/assets/img/Correlation.png)
 
+A quick and dirty comparitive summary:
+1. All 3 datasets appear to be very similair "along the diagonal"
+2. The **data_channel** vs **LDA_00, LDA_01, LDA_02** correlations are the strongest in the low popularity , reducing in the medium and reducing again in the high popularity dataset.
+3. The **average_token_length** vs **global_subjectivity, rate_positive_words, avg_positive_polarity, max_positive_polarity, average_negative_polarity, min_negative_polarity** correlations are weakest in the low popularity , strengthening in the medium and strengthening again in the high popularity dataset.
+4. The **n_unique_tokens, n_non_stop_words, n_non_stop_unique_tokens** vs **global_subjectivity, global_rate_positive_words, rate_positive_words, avg_positive_polarity, max_positive_polarity, average_negative_polarity, min_negative_polarity** correlations  essentially only exist in the low and high popularity datasets but much stronger in the high popularity dataset.
+
+Takeaways:
+1. 
 ### Data Channel Type/Popularity
 
 For this analysis, bar graphs of the percentage of articles per data channel were plotted.
