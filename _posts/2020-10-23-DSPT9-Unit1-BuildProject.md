@@ -60,7 +60,7 @@ weekday_columns = list(filter(lambda x: x.startswith('weekday_is_'), onp_df.colu
  'weekday_is_sunday']
 ~~~
 
-### Processing the data
+### Some assembly required - processing the data
 Merging the data from the multiple **data_channel_is_\***/**weekday_is_\*** columns into a single **data_channel**/**weekday** was easily achieved.
 However examining the resultant columns revealed a problem.
 ```python
