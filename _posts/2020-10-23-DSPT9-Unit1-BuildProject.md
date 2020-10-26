@@ -36,6 +36,8 @@ with zipfile.ZipFile(zfile_mem) as zf:
 
 Once loaded into a Pandas dataframe, initial observations of the dataset revealed that it is a large dataset with 39644 observations of 58 predictive attributes and 1 target attribute **shares**(the number of views for the article). 
 
+### Some assembly required - processing the data
+
 The **datachannel**(type of article) and **weekday**(day of the week on which the article was published) attributes looked interesting and examining their relationship or lack thereof with the popularity of the article appeared to be a good idea. One problem was with the form in which this data was stored in the dataframe - one column/attribute for each **datachannel** and **weekday**. The first step was to transform the multiple attributes/columns into a single one for **datachannel** and **weekday**.
  
 ```python
@@ -60,7 +62,6 @@ weekday_columns = list(filter(lambda x: x.startswith('weekday_is_'), onp_df.colu
  'weekday_is_sunday']
 ~~~
 
-### Some assembly required - processing the data
 Merging the data from the multiple **data_channel_is_\***/**weekday_is_\*** columns into a single **data_channel**/**weekday** was easily achieved.
 However examining the resultant columns revealed a problem.
 ```python
