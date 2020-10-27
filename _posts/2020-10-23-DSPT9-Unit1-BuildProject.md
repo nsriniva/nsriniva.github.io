@@ -269,13 +269,11 @@ The  correlation maps for the low/med/high popularity dataframes show distinctiv
 ![Correlation](/assets/img/Correlation.png)
 
 A quick and dirty comparitive summary:
-1. All 3 datasets appear to be very similair "along the diagonal"
+1. All 3 datasets appear to be very similar "along the diagonal"
 2. The **data_channel** vs **LDA_00, LDA_01, LDA_02** correlations are the strongest in the low popularity , reducing in the medium and reducing again in the high popularity dataset.
 3. The **average_token_length** vs **global_subjectivity, rate_positive_words, avg_positive_polarity, max_positive_polarity, average_negative_polarity, min_negative_polarity** correlations are weakest in the low popularity , strengthening in the medium and strengthening again in the high popularity dataset.
 4. The **n_unique_tokens, n_non_stop_words, n_non_stop_unique_tokens** vs **global_subjectivity, global_rate_positive_words, rate_positive_words, avg_positive_polarity, max_positive_polarity, average_negative_polarity, min_negative_polarity** correlations  essentially only exist in the low and high popularity datasets but much stronger in the high popularity dataset.
-
-Takeaways:
-1. 
+ 
 ### Data Channel Type/Popularity
 
 For this analysis, bar graphs of the percentage of articles per data channel were plotted.
