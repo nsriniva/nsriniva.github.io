@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Studying Online News Popularity
-subtitle: The What and When of Article Popularity
+title: Modeling Online News Popularity
+subtitle: Predicting Article Popularity
 tags: [datasets, visualization]
 ---
 
