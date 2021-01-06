@@ -28,7 +28,7 @@ Since the distribution of **popularity** values was balanced, **accuracy** makes
 
 ### Partitioning
 The `X` dataframe was created by dropping the target(**popularity**) attribute and the `y` vector from the target attribute column.
-Since the dataset is large, `sklearn.model_selection.train_test_split` was used twice to split it into `X_train/y_train`(64%/25372), `X_val/y_val`(16%/6343) and `X_test/y_test`(20%/7929) datasets.
+Since the dataset is large, `sklearn.model_selection.train_test_split` was used twice to split it into `X_train/y_train`(64%:25372), `X_val/y_val`(16%:6343) and `X_test/y_test`(20%:7929) datasets.
 
 ### Linear Model - Logistic Regression(LogisticRegression with SelectKBest) 
 
