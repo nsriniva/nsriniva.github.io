@@ -31,9 +31,24 @@ Since the dataset is large, `sklearn.model_selection.train_test_split` was used 
 
 ### Linear Model - Logistic Regression(LogisticRegression with SelectKBest) 
 
+#### Evaluation Metrics
+
 ### Tree Based Model - Decision Tree(DecisionTreeClassifier)
+
+#### Evaluation Metrics
 
 ### Tree Based Model - Random Forest(RandomForestClassifier)
 
+#### Evaluation Metrics
+
 ### Tree Based Model - Gradient Boosting(XGBoost)
 
+#### Evaluation Metrics
+
+### Comparative Evaluation Metrics
+
+| Priority apples | Second priority | Third priority |
+|-------|--------|---------|
+| ambrosia | gala | red delicious |
+| pink lady | jazz | macintosh |
+| honeycrisp | granny smith | fuji |
