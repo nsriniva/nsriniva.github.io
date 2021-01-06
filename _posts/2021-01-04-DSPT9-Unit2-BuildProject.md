@@ -17,20 +17,23 @@ A blog post on this work has been published as an article on Medium - [Studying 
 
 ## The Dataset
 
-The compressed CSV file was loaded into a Pandas dataframe, initial observations of the dataset revealed that it is a large dataset with 39644 observations of 2 non-predictive(**url**, **timedelta**), 47 predictive attributes and 1 target attribute (**shares** - the number of views for the article). 
-The problem was changed to one of Classification by creating a new target attribute (**popularity** - 1 if **shares** > median/1400 else 0) with 2 classes, `popular(1)` and `unpopular(0)`.
+The compressed CSV file was loaded into a Pandas dataframe, initial observations of the dataset revealed that it is a large dataset with 39644 observations of 2 non-predictive(**url**, **timedelta**), 47 predictive attributes and 1 target attribute (**shares** == the number of views for the article). 
+
+The problem was changed to one of Classification by creating a new target attribute (**popularity** == 1 if **shares** > median/1400 else 0) with 2 classes, `popular(1)` and `unpopular(0)`. The distribution of **popularity** values was reasonably balanced with 53% `popular(1)` and 47% `unpopular(0)`.
+
+The **url**, **timedelta** and **shares** attributes were then dropped from the dataset.
 
 ## Data Modeling
+Since the distribution of **popularity** values was balanced, **accuracy** makes a good evaluation metric with the baseline accuracy value being the percentage of the largest class, expressed as a fraction i.e. the baseline accuracy for the entire dataset would be 0.53. 
 
 ### Partitioning
+Since the dataset is large, `sklearn.model_selection.train_test_split` was used twice to split it into **Training**(64%/25372), **Validation**(16%/6343) and **Test**(20%/7929) datasets.
 
+### Linear Model - Logistic Regression(LogisticRegression with SelectKBest) 
 
-### Linear Model - LogisticRegression with SelectKBest 
+### Tree Based Model - Decision Tree(DecisionTreeClassifier)
 
-### Tree Based Model - DecisionTree
+### Tree Based Model - Random Forest(RandomForestClassifier)
 
-### Tree Based Model - RandomForest
+### Tree Based Model - Gradient Boosting(XGBoost)
 
-### Tree Based Model - Gradient Boosting(XGBoost 
-
-### Linear Model - LogisticRegression with SelectKBest 
