@@ -27,7 +27,8 @@ The **url**, **timedelta** and **shares** attributes were then dropped from the 
 Since the distribution of **popularity** values was balanced, **accuracy** makes a good evaluation metric with the baseline accuracy value being the percentage of the largest class, expressed as a fraction i.e. the baseline accuracy for the entire dataset would be 0.53. 
 
 ### Partitioning
-Since the dataset is large, `sklearn.model_selection.train_test_split` was used twice to split it into **Training**(64%/25372), **Validation**(16%/6343) and **Test**(20%/7929) datasets.
+The `X` dataframe was created by dropping the target(**popularity**) attribute and the `y` vector from the target attribute column.
+Since the dataset is large, `sklearn.model_selection.train_test_split` was used twice to split it into `X_train/y_train`(64%/25372), `X_val/y_val`(16%/6343) and `X_test/y_test`(20%/7929) datasets.
 
 ### Linear Model - Logistic Regression(LogisticRegression with SelectKBest) 
 
@@ -47,7 +48,7 @@ Since the dataset is large, `sklearn.model_selection.train_test_split` was used 
 
 ### Comparative Evaluation Metrics
 
-The Random Forest model exhibited the best behavior.
+The Random Forest model exhibited the best behavior, closely followed by Gradient Boost and Linear models with the Decision Tree model trailing behind.  
 
 | Model | Accuracy | Baseline | AUC |
 |-------|--------|---------|----|
