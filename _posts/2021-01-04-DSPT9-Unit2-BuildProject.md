@@ -47,6 +47,8 @@ Since the dataset is large, `sklearn.model_selection.train_test_split` was used 
 
 ### Comparative Evaluation Metrics
 
+The Random Forest model exhibited the best behavior.
+
 | Model | Accuracy | Baseline | AUC |
 |-------|--------|---------|----|
 | Linear | 0.66/0.66/0.66 | 0.54/0.53/0.0.52 | 0.71/0.71/0.71|
