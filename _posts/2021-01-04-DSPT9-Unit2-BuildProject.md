@@ -26,7 +26,7 @@ The problem was changed to one of Classification by creating a new target attrib
 The **url**, **timedelta** and **shares** attributes were then dropped from the dataset.
 
 ## Data Modeling
-Since the distribution of **popularity** values was balanced, **accuracy** makes a good evaluation metric with the baseline accuracy value being the percentage of the largest class, expressed as a fraction i.e. the baseline accuracy for the entire dataset would be 0.53. 
+Since the distribution of **popularity** values is balanced, **accuracy** makes a good evaluation metric with the baseline accuracy value being the percentage of the largest class, expressed as a fraction i.e. the baseline accuracy for the entire dataset would be 0.53. 
 
 ### Partitioning
 The `X` dataframe was created by dropping the target(**popularity**) attribute and the `y` vector from the target attribute column.
