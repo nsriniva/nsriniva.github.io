@@ -17,6 +17,8 @@ The original data cleanup code was used to create [CleanupOnlineNewsPopularity.i
 
 The code for this project is available at [OnlineNewsPopularity.ipynb](https://raw.githubusercontent.com/nsriniva/DS-Unit-2-Build/master/OnlineNewsPopularity.ipynb). 
 
+A blog post on this work has been published as an article on Medium - [Studying Online News Popularity](https://srini-nariangadu.medium.com/modeling-online-news-popularity-ebfe5e798b05).
+
 ## The Dataset
 
 The compressed CSV file was loaded into a Pandas dataframe, initial observations of the dataset revealed that it is a large dataset with 39644 observations of 2 non-predictive(**url**, **timedelta**), 47 predictive attributes and 1 target attribute (**shares** == the number of views for the article). 
