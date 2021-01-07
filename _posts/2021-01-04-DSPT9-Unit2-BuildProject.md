@@ -93,6 +93,12 @@ Using the best model gives us the following  accuracy/auc scores for the Trainin
 Here're the Confusion Matrix and ROC curves for the Test dataset
 ![Linear Model Confusion Matrix and ROC ](/assets/img/linear_model_test_acc.png)
 
+#### Understanding the Model
+
+Here's a visualization of the coefficients associated with the 51 features used for the model.
+
+![Linear Model Feature Coefficients ] (linear_model_feature_coeff.png)
+
 ### Tree Based Model - Decision Tree(DecisionTreeClassifier)
 
 #### Evaluation Metrics
