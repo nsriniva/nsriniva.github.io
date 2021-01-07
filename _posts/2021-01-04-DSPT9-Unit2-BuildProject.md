@@ -35,7 +35,7 @@ Since the dataset is large, `sklearn.model_selection.train_test_split` was used 
 The baseline accuracy measures for the Training, Validation and Test datasets are `0.54`, `0.53` and `0.52` respectively.
 
 ### Linear Model - Logistic Regression(LogisticRegression with SelectKBest) 
-For the Linear Model, the data was transformed by using `OneHotEncoder` and then scaled using `StandardScaler`. 
+For the Linear Model, the data was transformed by using `OneHotEncoder()` and then scaled using `StandardScaler()`. 
 
 The `get_best_k_model()` function defined below was used to compute the best `k`, along with the associated features and `LogisticRegression()` model. 
 We get a best k value of `51` and the best model has an accuracy of `0.66` against the Validation dataset.
@@ -101,6 +101,15 @@ Here's a visualization of the coefficients associated with the 51 features used 
 
 ### Tree Based Model - Decision Tree(DecisionTreeClassifier)
 
+For the Decision Tree model, the categorical data was encoded using `OrdinalEncoder()` and the `max_depth` hyperparameter for the `DecisionTreeClassifier()` was tuned to `7`.
+
+```
+model = make_pipeline(
+  OrdinalEncoder(), 
+  DecisionTreeClassifier(max_depth=7, random_state=42)
+)
+```
+
 #### Evaluation Metrics
 The Decision Tree model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
 
@@ -114,6 +123,12 @@ Here're the Confusion Matrix and ROC curves for the Test dataset
 ![Decision Tree Model Confusion Matrix and ROC ](/assets/img/decision_tree_test_acc.png)
 
 ### Tree Based Model - Random Forest(RandomForestClassifier)
+
+For the Random Forest model, the `OridinalEncoder()` was used again for the categorical features and the model hyperparameters were tuned as shown below:
+
+```
+rf_model = RandomForestClassifier(n_estimators=103, random_state=42, n_jobs=-1, max_depth=25, min_samples_leaf=3, max_features=0.3)
+```
 
 #### Evaluation Metrics
 The Random Forest model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
@@ -129,19 +144,42 @@ Here're the Confusion Matrix and ROC curves for the Test dataset
 
 #### Understanding the Model
 
+The following table details the importance, computing using `PermutationImportance()`, of the various features  used in the model
+
 ![Random Forest Feature Importance ](/assets/img/random_forest_permutation_importance.png)
 
-![Random Forest Feature Importance ](/assets/img/rf_pdp_is_weekend.png)
+![Random Forest PDP(Partial Dependence Plot) kw_avg_avg ](/assets/img/rf_pdp_kw_avg_avg.png)
 
-![Random Forest Feature Importance ](/assets/img/rf_pdp_kw_avg_avg.png)
+![Random Forest PDP(Partial Dependence Plot) is_weekend ](/assets/img/rf_pdp_is_weekend.png)
 
-![Random Forest Feature Importance ](/assets/img/rf_partial_dependence_is_weekend_kw_avg_avg.png)
+![Random Forest PDP(Partial Dependence Plot) kw_avg_avg is_weekend](/assets/img/rf_partial_dependence_is_weekend_kw_avg_avg.png)
 
-![Random Forest Feature Importance ](/assets/img/force_plot_076.png)
+![Random Forest SHAP popular ](/assets/img/force_plot_076.png)
 
-![Random Forest Feature Importance ](/assets/img/force_plot_020.png)
+![Random Forest SHAP_unpopular ](/assets/img/force_plot_020.png)
 
 ### Tree Based Model - Gradient Boosting(XGBoost)
+For the Random Forest model, the `OridinalEncoder()` was used again for the categorical features and the model hyperparameters were tuned as shown below:
+
+```
+xgb_model = XGBClassifier(n_estimators=1000, random_state=42, n_jobs=-1, max_depth=13, learning_rate=0.3) 
+
+```
+The model was then fit using the `'error'` eval metric, generating the best model at iteration `114` and stopping after `314` iterations.
+```
+eval_set = [(X_train_encoded, y_train), 
+            (X_val_encoded, y_val)]
+            
+eval_metric = 'error'
+xgb_model.fit(X_train_encoded, y_train, 
+          eval_set=eval_set, 
+          eval_metric=eval_metric,
+          early_stopping_rounds=200)
+```
+
+Here's the resulting Validation Curve:
+          
+![Gradient Boosting Model Validation Curve ](/assets/img/xgb_validation_curve.png)
 
 #### Evaluation Metrics
 The Gradient Boosting model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
@@ -155,9 +193,7 @@ The Gradient Boosting model gives us the following  accuracy/auc scores for the 
 Here're the Confusion Matrix and ROC curves for the Test dataset
 ![Gradient Boosting Model Confusion Matrix and ROC ](/assets/img/xgb_test_acc.png)
 
-#### Understanding the Model
 
-![Gradient Boosting Model Validation Curve ](/assets/img/xgb_validation_curve.png)
 
 ### Conclusion
 
