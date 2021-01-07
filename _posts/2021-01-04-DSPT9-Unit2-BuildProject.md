@@ -32,8 +32,13 @@ Since the distribution of **popularity** values is balanced, **accuracy** makes 
 The `X` dataframe was created by dropping the target(**popularity**) attribute and the `y` vector from the target attribute column.
 Since the dataset is large, `sklearn.model_selection.train_test_split` was used twice to split it into `X_train/y_train`(64%:25372), `X_val/y_val`(16%:6343) and `X_test/y_test`(20%:7929) datasets.
 
+The baseline accuracy measures for the Training, Validation and Test datasets are `0.54`, `0.53` and `0.52` respectively.
+
 ### Linear Model - Logistic Regression(LogisticRegression with SelectKBest) 
 For the Linear Model, the data was transformed by using `OneHotEncoder` and then scaled using `StandardScaler`. 
+
+The `get_best_k_model()` function defined below was used to compute the best `k`, along with the associated features and `LogisticRegression()` model. 
+We get a best k value of `51` and the best model has an accuracy of `0.66` against the Validation dataset.
 
 ```
 # For parameter k, use SelectKBest to compute the k best
@@ -75,7 +80,15 @@ def get_best_k_model(X_tr, y_tr, X_v, y_v):
 
   print(f'best_k = {best_k}\nbest Accuracy = {best_acc:0.2f}\n')
 ```
+
 #### Evaluation Metrics
+Using the best model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
+
+| Dataset | Accuracy | Baseline | AUC |
+|-------|--------|---------|----|
+| Training | 0.66 | 0.54 | 0.71|
+| Validation | 0.66 | 0.53 | 0.71|
+| Test | 0.66 | 0.0.52 | 0.71|
 
 ### Tree Based Model - Decision Tree(DecisionTreeClassifier)
 
@@ -89,7 +102,7 @@ def get_best_k_model(X_tr, y_tr, X_v, y_v):
 
 #### Evaluation Metrics
 
-### Comparative Evaluation Metrics
+### Conclusion
 
 The Random Forest model exhibited the best behavior, closely followed by Gradient Boost and Linear models with the Decision Tree model trailing behind.  
 
@@ -99,3 +112,4 @@ The Random Forest model exhibited the best behavior, closely followed by Gradien
 | Decision Tree | 0.67/0.64/0.64 | 0.54/0.53/0.0.52 | 0.73/0.69/0.68|
 | Random Forest | 1.00/0.67/0.66 | 0.54/0.53/0.0.52 | 1.00/0.73/0.72|
 | Gradient Boost | 1.00/0.66/0.65 | 0.54/0.53/0.0.52 | 1.00/0.72/0.71|
+
