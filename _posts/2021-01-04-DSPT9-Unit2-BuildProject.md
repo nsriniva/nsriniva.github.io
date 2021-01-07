@@ -148,14 +148,27 @@ The following table details the importance, computing using `PermutationImportan
 
 ![Random Forest Feature Importance ](/assets/img/random_forest_permutation_importance.png)
 
+Since the 2 most important features were `kw_avg_avg` and `is_weekend`, here're the Partial Dependence Plots for
+
+`kw_avg_avg` in isolation:
 ![Random Forest PDP(Partial Dependence Plot) kw_avg_avg ](/assets/img/rf_pdp_kw_avg_avg.png)
 
+`is_weekend` in isolation:
 ![Random Forest PDP(Partial Dependence Plot) is_weekend ](/assets/img/rf_pdp_is_weekend.png)
 
+and
+
+both interacting
 ![Random Forest PDP(Partial Dependence Plot) kw_avg_avg is_weekend](/assets/img/rf_partial_dependence_is_weekend_kw_avg_avg.png)
 
+To get a better understanding of the impact of various features on predictions, here're SHAP (SHapley Additive exPlanations) plots of
+
+an entry accurately predicted as `popular(1)`
 ![Random Forest SHAP popular ](/assets/img/force_plot_076.png)
 
+and
+
+one accurately predicted as `unpopular(0)`
 ![Random Forest SHAP_unpopular ](/assets/img/force_plot_020.png)
 
 ### Tree Based Model - Gradient Boosting(XGBoost)
