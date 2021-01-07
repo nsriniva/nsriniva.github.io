@@ -88,19 +88,38 @@ Using the best model gives us the following  accuracy/auc scores for the Trainin
 |-------|--------|---------|----|
 | Training | 0.66 | 0.54 | 0.71|
 | Validation | 0.66 | 0.53 | 0.71|
-| Test | 0.66 | 0.0.52 | 0.71|
+| Test | 0.66 | 0.52 | 0.71|
 
 ### Tree Based Model - Decision Tree(DecisionTreeClassifier)
 
 #### Evaluation Metrics
+The Decision Tree model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
 
+| Dataset | Accuracy | Baseline | AUC |
+|-------|--------|---------|----|
+| Training | 0.67 | 0.54 | 0.73|
+| Validation | 0.64 | 0.53 | 0.69|
+| Test | 0.64 | 0.52 | 0.68|
 ### Tree Based Model - Random Forest(RandomForestClassifier)
 
 #### Evaluation Metrics
+The Random Forest model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
 
+| Dataset | Accuracy | Baseline | AUC |
+|-------|--------|---------|----|
+| Training | 1.00 | 0.54 | 1.00|
+| Validation | 0.67 | 0.53 | 0.73|
+| Test | 0.66 | 0.52 | 0.72|
 ### Tree Based Model - Gradient Boosting(XGBoost)
 
 #### Evaluation Metrics
+The Gradient Boosting model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
+
+| Dataset | Accuracy | Baseline | AUC |
+|-------|--------|---------|----|
+| Training | 1.00 | 0.54 | 1.00|
+| Validation | 0.66 | 0.53 | 0.72|
+| Test | 0.65 | 0.52 | 0.71|
 
 ### Conclusion
 
