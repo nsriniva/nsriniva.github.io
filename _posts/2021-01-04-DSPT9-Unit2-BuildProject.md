@@ -125,10 +125,10 @@ The Gradient Boosting model gives us the following  accuracy/auc scores for the 
 
 The Random Forest model exhibited the best behavior, closely followed by Gradient Boost and Linear models with the Decision Tree model trailing behind.  
 
-| Model | Accuracy | Baseline | AUC |
+| Model | Accuracy |  AUC |
 |-------|--------|---------|----|
-| Linear | 0.66/0.66/0.66 | 0.54/0.53/0.0.52 | 0.71/0.71/0.71|
-| Decision Tree | 0.67/0.64/0.64 | 0.54/0.53/0.0.52 | 0.73/0.69/0.68|
-| Random Forest | 1.00/0.67/0.66 | 0.54/0.53/0.0.52 | 1.00/0.73/0.72|
-| Gradient Boost | 1.00/0.66/0.65 | 0.54/0.53/0.0.52 | 1.00/0.72/0.71|
+| Linear | 0.66/0.66/0.66 |  0.71/0.71/0.71|
+| Decision Tree | 0.67/0.64/0.64 |  0.73/0.69/0.68|
+| Random Forest | 1.00/0.67/0.66 |  1.00/0.73/0.72|
+| Gradient Boost | 1.00/0.66/0.65 |  1.00/0.72/0.71|
 
