@@ -111,7 +111,7 @@ The Decision Tree model gives us the following  accuracy/auc scores for the Trai
 | Test | 0.64 | 0.52 | 0.68|
 
 Here're the Confusion Matrix and ROC curves for the Test dataset
-![Linear Model Confusion Matrix and ROC ](/assets/img/decision_tree_test_acc.png)
+![Decision Tree Model Confusion Matrix and ROC ](/assets/img/decision_tree_test_acc.png)
 
 ### Tree Based Model - Random Forest(RandomForestClassifier)
 
@@ -125,11 +125,23 @@ The Random Forest model gives us the following  accuracy/auc scores for the Trai
 | Test | 0.66 | 0.52 | 0.72|
 
 Here're the Confusion Matrix and ROC curves for the Test dataset
-![Linear Model Confusion Matrix and ROC ](/assets/img/random_forest_test_acc.png)
+![Random Forest Model Confusion Matrix and ROC ](/assets/img/random_forest_test_acc.png)
+
+#### Understanding the Model
+
+![Random Forest Feature Importance ](/assets/img/random_forest_permutation_importance.png)
+
+![Random Forest Feature Importance ](/assets/img/rf_pdp_is_weekend.png)
+
+![Random Forest Feature Importance ](/assets/img/rrf_pdp_kw_avg_avg.png)
+
+![Random Forest Feature Importance ](/assets/img/rf_partial_dependence_is_weekend_kw_avg_avg.png)
+
+![Random Forest Feature Importance ](/assets/img/orce_plot_020.png)
+
+![Random Forest Feature Importance ](/assets/img/force_plot_076.png)
 
 ### Tree Based Model - Gradient Boosting(XGBoost)
-
-
 
 #### Evaluation Metrics
 The Gradient Boosting model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
@@ -141,7 +153,9 @@ The Gradient Boosting model gives us the following  accuracy/auc scores for the 
 | Test | 0.65 | 0.52 | 0.71|
 
 Here're the Confusion Matrix and ROC curves for the Test dataset
-![Linear Model Confusion Matrix and ROC ](/assets/img/xgb_test_acc.png)
+![Gradient Boosting Model Confusion Matrix and ROC ](/assets/img/xgb_test_acc.png)
+
+#### Understanding the Model
 
 ### Conclusion
 
