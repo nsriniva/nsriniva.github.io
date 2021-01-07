@@ -9,7 +9,7 @@ This is a post about my project  on modeling the popularity of online news artic
 
 The work uses the dataset from the [Online News Popularity project](https://archive.ics.uci.edu/ml/datasets/online+news+popularity) that collected data from articles published on Mashable, between January 7 2013 to January 7 2015. The data was the basis for research which resulted in the publication of a paper on ["A Proactive Intelligent Decision Support System for Predicting the Popularity of Online News"](https://www.researchgate.net/publication/283510525_A_Proactive_Intelligent_Decision_Support_System_for_Predicting_the_Popularity_of_Online_News)
 
-The data is mostly clean but there was some work required to combine columns, that were essentially "One Hot Encoded", into  Categorical columns for  Data Channel and Day of the Week data as well some scripting to fill in some missing Data Channel values. 
+The data is mostly clean but there was some work required to combine columns, that were essentially "One Hot Encoded", into  Categorical columns for  Data Channel and Day of the Week data as well some scripting to fill in some missing Data Channel values. The main reason for this is that while One Hot Encoding is good for linear models, the tree based models perform better with Ordinal Encoding for Categorical data.
 
 Since the same dataset was used in the Unit1 Build Project, all of this cleanup work was already completed and described in "The Dataset" section of [Studying Online News Popularity](https://nsriniva.github.io/2020-10-23-DSPT9-Unit1-BuildProject/)
 
@@ -33,7 +33,48 @@ The `X` dataframe was created by dropping the target(**popularity**) attribute a
 Since the dataset is large, `sklearn.model_selection.train_test_split` was used twice to split it into `X_train/y_train`(64%:25372), `X_val/y_val`(16%:6343) and `X_test/y_test`(20%:7929) datasets.
 
 ### Linear Model - Logistic Regression(LogisticRegression with SelectKBest) 
+For the Linear Model, the data was transformed by using `OneHotEncoder` and then scaled using `StandardScaler`. 
 
+```
+# For parameter k, use SelectKBest to compute the k best
+# features and use those to train a LogisticRegressionCV
+# model.
+def select_and_fit(k, X_tr, y_tr, X_v, y_v):
+    
+  selector = SelectKBest(score_func=f_classif, k=k)
+  X_train_selected = selector.fit_transform(X_tr, y_train)
+  X_val_selected = selector.transform(X_v)
+
+  model = LogisticRegression()
+  model.fit(X_train_selected, y_tr)
+  
+  return model.score(X_val_selected, y_v), model, selector
+  
+def get_best_k_model(X_tr, y_tr, X_v, y_v):
+  best_model = None
+  best_selector = None
+  best_features=[]
+  best_k = 0
+  best_acc = 0
+
+  # n = 62
+  n = X_tr.shape[1]
+  # Loop through k and compare accuracies to determine the best
+  # k features(best_features) with the highest accuracy
+  # One run with k from 1 - 62(range(1,n+1)) gave the best k as 51 - in order to reduce
+  # the time looking for best k, we just run once with k=51
+  #for k in range(1, n+1):
+  for k in range(51, 52):
+      acc, model, selector = select_and_fit(k, X_tr, y_tr, X_v, y_v)
+      #print(acc, feat)
+      if acc > best_acc:
+        best_acc = acc
+        best_k = k
+        best_model = model
+        best_selector = selector
+
+  print(f'best_k = {best_k}\nbest Accuracy = {best_acc:0.2f}\n')
+```
 #### Evaluation Metrics
 
 ### Tree Based Model - Decision Tree(DecisionTreeClassifier)
