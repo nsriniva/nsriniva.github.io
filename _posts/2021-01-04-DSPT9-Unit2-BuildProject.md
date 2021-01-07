@@ -133,13 +133,13 @@ Here're the Confusion Matrix and ROC curves for the Test dataset
 
 ![Random Forest Feature Importance ](/assets/img/rf_pdp_is_weekend.png)
 
-![Random Forest Feature Importance ](/assets/img/rrf_pdp_kw_avg_avg.png)
+![Random Forest Feature Importance ](/assets/img/rf_pdp_kw_avg_avg.png)
 
 ![Random Forest Feature Importance ](/assets/img/rf_partial_dependence_is_weekend_kw_avg_avg.png)
 
-![Random Forest Feature Importance ](/assets/img/orce_plot_020.png)
-
 ![Random Forest Feature Importance ](/assets/img/force_plot_076.png)
+
+![Random Forest Feature Importance ](/assets/img/force_plot_020.png)
 
 ### Tree Based Model - Gradient Boosting(XGBoost)
 
