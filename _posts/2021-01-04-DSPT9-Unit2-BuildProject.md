@@ -103,7 +103,7 @@ Here's a visualization of the coefficients associated with the 51 features used 
 
 ### Tree Based Model - Decision Tree(DecisionTreeClassifier)
 
-For the Decision Tree model, the categorical data was encoded using `OrdinalEncoder()` and the `max_depth` hyperparameter for the `DecisionTreeClassifier()` was tuned to `7`.
+For the Decision Tree model, the categorical data was encoded using `OrdinalEncoder()` and the `max_depth` hyperparameter for the `DecisionTreeClassifier()` was tuned to `7` using the Validation dataset.
 
 ```
 model = make_pipeline(
@@ -126,7 +126,7 @@ Here're the Confusion Matrix and ROC curves for the Test dataset
 
 ### Tree Based Model - Random Forest(RandomForestClassifier)
 
-For the Random Forest model, the `OridinalEncoder()` was used again for the categorical features and the model hyperparameters were tuned as shown below:
+For the Random Forest model, the `OridinalEncoder()` was used again for the categorical features and the model hyperparameters were tuned to the values shown below using the Validation dataset:
 
 ```
 rf_model = RandomForestClassifier(n_estimators=103, random_state=42, n_jobs=-1, max_depth=25, min_samples_leaf=3, max_features=0.3)
@@ -174,7 +174,7 @@ one accurately predicted as `unpopular(0)`
 ![Random Forest SHAP_unpopular ](/assets/img/force_plot_020.png)
 
 ### Tree Based Model - Gradient Boosting(XGBoost)
-For the Random Forest model, the `OridinalEncoder()` was used again for the categorical features and the model hyperparameters were tuned as shown below:
+For the Random Forest model, the `OridinalEncoder()` was used again for the categorical features and the model hyperparameters were tuned as shown below using the Validation dataset:
 
 ```
 xgb_model = XGBClassifier(n_estimators=1000, random_state=42, n_jobs=-1, max_depth=13, learning_rate=0.3) 
