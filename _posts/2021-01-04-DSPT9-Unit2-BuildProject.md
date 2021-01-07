@@ -157,6 +157,8 @@ Here're the Confusion Matrix and ROC curves for the Test dataset
 
 #### Understanding the Model
 
+![Gradient Boosting Model Validation Curve ](/assets/img/xgb_validation_curve.png)
+
 ### Conclusion
 
 The Random Forest model exhibited the best behavior, closely followed by Gradient Boosting and Linear models with the Decision Tree model trailing behind.  
