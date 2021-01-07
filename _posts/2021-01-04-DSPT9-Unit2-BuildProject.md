@@ -90,6 +90,9 @@ Using the best model gives us the following  accuracy/auc scores for the Trainin
 | Validation | 0.66 | 0.53 | 0.71|
 | Test | 0.66 | 0.52 | 0.71|
 
+Here're the Confusion Matrix and ROC curves for the Test dataset
+![Linear Model Confusion Matrix and ROC ](/assets/img/linear_model_test_acc.png)
+
 ### Tree Based Model - Decision Tree(DecisionTreeClassifier)
 
 #### Evaluation Metrics
@@ -100,6 +103,10 @@ The Decision Tree model gives us the following  accuracy/auc scores for the Trai
 | Training | 0.67 | 0.54 | 0.73|
 | Validation | 0.64 | 0.53 | 0.69|
 | Test | 0.64 | 0.52 | 0.68|
+
+Here're the Confusion Matrix and ROC curves for the Test dataset
+![Linear Model Confusion Matrix and ROC ](/assets/img/decision_tree_test_acc.png)
+
 ### Tree Based Model - Random Forest(RandomForestClassifier)
 
 #### Evaluation Metrics
@@ -110,7 +117,13 @@ The Random Forest model gives us the following  accuracy/auc scores for the Trai
 | Training | 1.00 | 0.54 | 1.00|
 | Validation | 0.67 | 0.53 | 0.73|
 | Test | 0.66 | 0.52 | 0.72|
+
+Here're the Confusion Matrix and ROC curves for the Test dataset
+![Linear Model Confusion Matrix and ROC ](/assets/img/random_forest_test_acc.png)
+
 ### Tree Based Model - Gradient Boosting(XGBoost)
+
+
 
 #### Evaluation Metrics
 The Gradient Boosting model gives us the following  accuracy/auc scores for the Training, Validation and Test datasets:
@@ -121,9 +134,12 @@ The Gradient Boosting model gives us the following  accuracy/auc scores for the 
 | Validation | 0.66 | 0.53 | 0.72|
 | Test | 0.65 | 0.52 | 0.71|
 
+Here're the Confusion Matrix and ROC curves for the Test dataset
+![Linear Model Confusion Matrix and ROC ](/assets/img/xgb_test_acc.png)
+
 ### Conclusion
 
-The Random Forest model exhibited the best behavior, closely followed by Gradient Boost and Linear models with the Decision Tree model trailing behind.  
+The Random Forest model exhibited the best behavior, closely followed by Gradient Boosting and Linear models with the Decision Tree model trailing behind.  
 
 | Model | Accuracy |  AUC |
 |-------|--------|----|
