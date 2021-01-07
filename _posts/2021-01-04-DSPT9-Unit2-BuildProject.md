@@ -158,8 +158,9 @@ Since the 2 most important features were `kw_avg_avg` and `is_weekend`, here're 
 
 and
 
-both interacting
+both interacting:
 ![Random Forest PDP(Partial Dependence Plot) kw_avg_avg is_weekend](/assets/img/rf_partial_dependence_is_weekend_kw_avg_avg.png)
+
 
 To get a better understanding of the impact of various features on predictions, here're SHAP (SHapley Additive exPlanations) plots of
 
