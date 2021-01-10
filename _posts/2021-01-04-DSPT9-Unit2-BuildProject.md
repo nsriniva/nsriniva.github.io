@@ -15,7 +15,8 @@ Since the same dataset was used in the Unit1 Build Project, all of this cleanup 
 
 The original data cleanup code was used to create [CleanupOnlineNewsPopularity.ipynb](https://github.com/nsriniva/DS-Unit-2-Build/blob/main/CleanupOnlineNewsPopularity.ipynb) which stored the cleaned up dataset in a CSV file that was zipped and stored at [OnlineNewsPopularity.csv.zip](https://github.com/nsriniva/DS-Unit-2-Build/blob/main/OnlineNewsPopularity.csv.zip) - this was then used as the dataset for this project.
 
-The code for this project is available at [OnlineNewsPopularity.ipynb](https://raw.githubusercontent.com/nsriniva/DS-Unit-2-Build/master/OnlineNewsPopularity.ipynb). 
+The code for this project is available at [OnlineNewsPopularity.ipynb](https://github.com/nsriniva/DS-Unit-2-Build/blob/main/OnlineNewsPopularity.ipynb).
+
 
 A blog post on this work has been published as an article on Medium - [Modeling Online News Popularity](https://srini-nariangadu.medium.com/modeling-online-news-popularity-ebfe5e798b05).
 
